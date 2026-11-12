@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guidebook Badan Eksternal DPM SV IPB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Palet Matcha & Strawberry (UI/UX Optimized) */
+  --bg:#F4EFEA;          /* Turunan terang Silky Clay */
+  --surf:#FFF6EE;        /* Coconut Cream */
+  --ink:#2A3323;         /* Deep Matcha untuk keterbacaan maksimal */
+  --mut:#5F6B56;         /* Muted Green Tea Leaf */
+  --line:#E2DED6;        /* Silky Clay */
+  --acc:#6E7F5E;         /* Green Tea Leaf */
+  --acc2:#D56B7A;        /* Berry Blush */
+  --accsoft:#F7C6CF;     /* Strawberry Milk */
+  --matchasoft:#E3EFE0;  /* Soft Matcha Whisper */
+  --hero:#58684A;        /* Deep Green Tea Leaf */
+  --heroink:#FFF6EE;     /* Coconut Cream */
+  --r:18px;
+  --f1:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --f2:'Figtree','Segoe UI',system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+
+
+/* Dark Mode versi Cozy Matcha Night */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#181E15;--surf:#222A1E;--ink:#FFF6EE;--mut:#B4C2A8;--line:#34402E;
+    --acc:#A8C9A0;--acc2:#E58391;--accsoft:#4A2A31;--matchasoft:#2C3826;--hero:#121710
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#181E15;--surf:#222A1E;--ink:#FFF6EE;--mut:#B4C2A8;--line:#34402E;
+  --acc:#A8C9A0;--acc2:#E58391;--accsoft:#4A2A31;--matchasoft:#2C3826;--hero:#121710
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 var(--f2)}
+h1,h2,h3{font-family:var(--f1);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--acc2)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));z-index:30}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surf) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .in{max-width:1080px;margin:auto;display:flex;align-items:center;gap:8px;padding:10px 16px}
+nav b{font-family:var(--f1);font-weight:800;white-space:nowrap;margin-right:6px;color:var(--acc)}
+.links{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.links a{white-space:nowrap;text-decoration:none;color:var(--mut);padding:6px 12px;border-radius:99px;font-weight:500;font-size:.92rem;transition:background .2s,color .2s}
+.links a.on{background:var(--accsoft);color:#7A2633;font-weight:700}
+:root[data-theme="dark"] .links a.on{color:#F7C6CF}
+#th{border:1px solid var(--line);background:var(--surf);border-radius:99px;width:38px;height:38px}
+
+main,.wrap{max-width:1080px;margin:auto;padding:0 16px}
+.hero{background:var(--hero);color:var(--heroink);padding:56px 0 64px}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h1{font-size:clamp(2.3rem,6.5vw,4.4rem);font-weight:800}
+.hero p{color:#E2DED6;font-size:1.1rem}
+.cta{display:inline-block;background:var(--acc2);color:#FFF6EE;font-weight:700;padding:12px 24px;border-radius:99px;text-decoration:none;border:0;box-shadow:0 6px 16px #00000022;transition:transform .2s}
+.cta:hover{transform:translateY(-2px)}
+
+.feed{background:#0000;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:340px;justify-self:center;width:100%}
+.feed div{aspect-ratio:1;border-radius:14px;display:grid;place-items:center;font:800 1rem var(--f1);transition:background .4s,color .4s;box-shadow:0 4px 10px #00000018}
+.sw{display:flex;gap:10px;margin-top:14px;justify-content:center;align-items:center;font-size:.9rem;color:#E2DED6;flex-wrap:wrap}
+.sw button{width:34px;height:34px;border-radius:50%;border:2px solid #FFF6EE66;padding:0}
+.sw button[aria-pressed=true]{border-color:#FFF6EE;box-shadow:0 0 0 3px #FFF6EE33}
+
+section{padding:64px 0}
+.lead{color:var(--mut);font-size:1.08rem}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:24px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:transform .2s,border-color .2s}
+a.card:hover{transform:translateY(-3px);border-color:var(--acc2)}
+.card .ic{font-size:1.8rem;display:block;margin-bottom:8px}
+.card p{margin:0;color:var(--mut)}
+
+.note{border-left:5px solid var(--acc2);background:var(--surf);padding:14px 18px;border-radius:0 var(--r) var(--r) 0;margin:24px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tip{border-left-color:var(--acc)}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}
+.tabs button{background:var(--surf);border:1px solid var(--line);padding:9px 18px;border-radius:99px;font-weight:600}
+.tabs button[aria-selected=true]{background:var(--acc2);border-color:var(--acc2);color:#FFF6EE}
+.tabp{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.tag{display:inline-block;background:var(--accsoft);color:#7A2633;font-weight:700;font-size:.85rem;padding:3px 12px;border-radius:99px;margin-bottom:10px}
+:root[data-theme="dark"] .tag{color:#F7C6CF}
+
+ul.chips{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+ul.chips li{background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:.93rem}
+
+details{background:var(--surf);border:1px solid var(--line);border-radius:var(--r);margin:12px 0;overflow:hidden}
+summary{cursor:pointer;padding:16px 20px;font:600 1.1rem var(--f1);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.4rem;color:var(--acc2);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details .b{padding:0 20px 18px}
+
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:4px 0 14px 46px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--acc);color:#FFF6EE;display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.steps li::after{content:"";position:absolute;left:15px;top:34px;bottom:2px;width:2px;background:var(--line)}
+.steps li:last-child::after{display:none}
+
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surf)}
+table{border-collapse:collapse;width:100%;min-width:480px}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:600;font-size:.9rem}
+tr:last-child td{border:0}
+.st{border:0;border-radius:99px;padding:4px 14px;font-weight:700;font-size:.85rem}
+.s0{background:#E2DED6;color:#4F4C46}
+.s1{background:#F7C6CF;color:#8A2B3A}
+.s2{background:#A8C9A0;color:#233B1E}
+
+.chat{position:relative;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:22px;white-space:pre-line}
+.chat button{position:absolute;top:12px;right:12px}
+.cp{background:var(--acc2);color:#FFF6EE;border:0;border-radius:99px;padding:7px 16px;font-weight:700}
+
+.prog{display:flex;align-items:center;gap:20px;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin:20px 0}
+.ring{--p:0;width:84px;height:84px;border-radius:50%;background:conic-gradient(var(--acc2) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none}
+.ring span{width:66px;height:66px;border-radius:50%;background:var(--surf);display:grid;place-items:center;font:800 1.2rem var(--f1)}
+.grp{margin:20px 0 8px;font:600 1.1rem var(--f1);color:var(--acc)}
+.ck{display:flex;gap:12px;align-items:flex-start;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:8px 0;cursor:pointer;transition:background .2s}
+.ck input{width:22px;height:22px;accent-color:var(--acc2);flex:none;margin-top:2px}
+.ck:has(input:checked){background:var(--matchasoft)}
+.ck:has(input:checked) span{text-decoration:line-through;color:var(--mut)}
+.ghost{background:none;border:1px solid var(--line);border-radius:99px;padding:8px 18px}
+
+.card .ic{
+  width:46px;height:46px;border-radius:14px;
+  background:var(--accsoft);color:var(--acc2);
+  display:grid;place-items:center;margin-bottom:14px
+}
+.card .ic svg{width:24px;height:24px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+footer{background:var(--hero);color:var(--heroink);padding:56px 0}
+footer p{color:#E2DED6}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}section{padding:48px 0}nav b{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><div class="in"><b>Badan Eksternal</b>
+<div class="links" id="links"><a href="#kenal">Mengenal</a><a href="#identitas">Identitas</a><a href="#branding">Branding</a><a href="#relasi">Relasi</a><a href="#checklist">Checklist</a></div>
+<button id="th" aria-label="Ganti tema terang atau gelap">◐</button></div></nav>
+
+<header class="hero"><div class="wrap">
+<div>
+<h1>Guidebook Badan Eksternal</h1>
+<p>Dewan Perwakilan Mahasiswa Sekolah Vokasi IPB. Panduan untuk anggota baru: dari identitas visual, branding media sosial, sampai studi banding.</p>
+<a class="cta" href="#kenal">Mulai membaca</a>
+</div>
+<div>
+<div class="feed" id="feed" aria-hidden="true"></div>
+<div class="sw" role="group" aria-label="Pilih color palette feed"><span>Coba color palette:</span>
+<button style="background:#D56B7A" data-p="0" aria-pressed="true" aria-label="Palette Matcha & Strawberry"></button>
+<button style="background:#A8C9A0" data-p="1" aria-pressed="false" aria-label="Palette Matcha Whisper"></button>
+<button style="background:#F7C6CF" data-p="2" aria-pressed="false" aria-label="Palette Strawberry Milk"></button>
+<button style="background:#FFF6EE" data-p="3" aria-pressed="false" aria-label="Palette Coconut Cream"></button></div>
+</div></div></header>
+
+<main>
+<section id="kenal">
+<h2>1. Mengenal Badan Eksternal DPM</h2>
+<p>Badan Eksternal adalah badan di bawah DPM SV IPB yang bertanggung jawab menjaga identitas, citra, dan hubungan kelembagaan DPM dengan organisasi lain, baik di dalam maupun di luar institusi.</p>
+<p>Badan ini membangun identitas visual DPM, mengelola branding lewat media sosial, dan memperluas relasi serta wawasan melalui komunikasi dan studi banding dengan organisasi mahasiswa lain.</p>
+<p class="lead">Tugas Badan Eksternal terbagi menjadi tiga bidang utama:</p>
+<div class="cards">
+  <a class="card" href="#identitas" style="text-decoration:none;color:inherit">
+    <span class="ic">
+      <!-- Ikon Palet Desain -->
+      <svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+    </span>
+    <h3>Pembuatan Identitas DPM</h3>
+    <p>Logo dan atribut resmi yang konsisten.</p>
+  </a>
+
+  <a class="card" href="#branding" style="text-decoration:none;color:inherit">
+    <span class="ic">
+      <!-- Ikon Megaphone / Branding -->
+      <svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+    </span>
+    <h3>Branding DPM</h3>
+    <p>Citra DPM lewat media sosial yang aktif dan informatif.</p>
+  </a>
+
+  <a class="card" href="#relasi" style="text-decoration:none;color:inherit">
+    <span class="ic">
+      <!-- Ikon Relasi / Komunitas -->
+      <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    </span>
+    <h3>Relasi dan Insight</h3>
+    <p>Hubungan dan studi banding dengan organisasi kampus lain.</p>
+  </a>
+</div>
+</section>
+
+<section id="identitas">
+<h2>2. Pembuatan Identitas DPM</h2>
+<p>Identitas DPM adalah identitas visual yang menjadi ciri khas dan pembeda DPM SV IPB dari organisasi lain. Identitas ini diterapkan pada berbagai kebutuhan kelembagaan agar semua atribut tampil konsisten dan mewakili karakter organisasi.</p>
+<h3>Cakupan pekerjaan</h3>
+<p><b>Logo DPM:</b> membuat atau mengembangkan logo yang mewakili identitas, nilai, dan karakter DPM SV IPB.<br><b>Atribut kelembagaan:</b> merancang desain atribut resmi yang dipakai anggota DPM.</p>
+<div class="cards">
+  <div class="card">
+    <span class="ic">
+      <!-- Ikon Perisai / Logo -->
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+    </span>
+    <h3>Logo DPM</h3>
+    <p>Identitas visual utama organisasi.</p>
+  </div>
+
+  <div class="card">
+    <span class="ic">
+      <!-- Ikon Baju / PDH -->
+      <svg viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+    </span>
+    <h3>PDH</h3>
+    <p>Seragam resmi anggota DPM.</p>
+  </div>
+
+  <div class="card">
+    <span class="ic">
+      <!-- Ikon Lanyard / Tag -->
+      <svg viewBox="0 0 24 24"><path d="M9 3h6l-1 5h-4L9 3z"/><rect x="6" y="8" width="12" height="13" rx="2"/><circle cx="12" cy="13" r="2"/><path d="M9 18c.6-1.2 1.7-2 3-2s2.4.8 3 2"/></svg>
+    </span>
+    <h3>Lanyard</h3>
+    <p>Atribut pengenal anggota.</p>
+  </div>
+
+  <div class="card">
+    <span class="ic">
+      <!-- Ikon ID Card & Badge -->
+      <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><circle cx="8.5" cy="11.5" r="2"/><path d="M5.5 16c.6-1.2 1.7-2 3-2s2.4.8 3 2"/><line x1="14" y1="10" x2="19" y2="10"/><line x1="14" y1="14" x2="18" y2="14"/></svg>
+    </span>
+    <h3>ID Card dan Badge Almamater</h3>
+    <p>Identitas dan pengenal kelembagaan.</p>
+  </div>
+</div>
+<div class="note tip"><b>Yang perlu diperhatikan</b>
+<ul><li>Gunakan elemen visual yang mewakili karakter DPM.</li><li>Terapkan warna dan tipografi yang konsisten.</li><li>Pastikan desain bisa dipakai di berbagai media dan kebutuhan organisasi.</li><li>Koordinasikan dengan pihak terkait sebelum desain difinalisasi dan diproduksi.</li></ul></div>
+</section>
+
+<section id="branding">
+<h2>3. Branding DPM</h2>
+<p>Branding adalah upaya membangun dan menjaga citra DPM agar dikenal mahasiswa dan organisasi lain. Salah satu caranya adalah mengelola media sosial secara aktif, informatif, dan konsisten.</p>
+<h3>A. Pengelolaan media sosial</h3>
+<p>Mencakup perencanaan konten, penentuan identitas visual, pembuatan desain, sampai publikasi lewat akun resmi DPM.</p>
+<ol class="steps">
+<li>Menentukan color palette sebagai warna utama identitas media sosial.</li>
+<li>Menyusun konsep dan gaya desain feeds agar tampil konsisten.</li>
+<li>Membuat matriks atau content planner sebagai pedoman publikasi.</li>
+<li>Mendesain dan mengunggah konten sesuai jadwal dan kebutuhan organisasi.</li>
+<li>Memastikan informasi yang dipublikasikan resmi, relevan, dan tidak memuat informasi pribadi.</li>
+</ol>
+
+<h3 style="margin-top:36px">B. Jenis konten yang diperbolehkan</h3>
+<p>Konten dikelompokkan menjadi tiga jenis menurut waktu dan kebutuhan publikasinya. Pilih tab untuk melihat detailnya.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="tabp" id="tabp" role="tabpanel"></div>
+<div class="note"><b>Catatan penting:</b> semua konten harus berkaitan dengan kepentingan kelembagaan dan informasi kemahasiswaan. Hindari informasi pribadi, data sensitif, atau dokumentasi yang belum disetujui pihak terkait.</div>
+
+<h3 style="margin-top:36px">C. Cara mengelola branding media sosial</h3>
+<details open><summary>1. Menentukan desain dan color palette</summary><div class="b">
+<p>Color palette adalah kumpulan warna yang menjadi identitas visual media sosial DPM. Tentukan sejak awal supaya semua konten tampil seragam. (Coba ganti palette di bagian atas halaman untuk melihat efeknya pada feed.)</p>
+<ol class="steps">
+<li>Cari referensi desain di Pinterest dengan kata kunci seperti minimalist branding, student council design, atau editorial Instagram feed.</li>
+<li>Pilih beberapa referensi yang sesuai dengan karakter DPM SV IPB.</li>
+<li>Tentukan warna utama, warna pendukung, dan warna aksen.</li>
+<li>Tentukan font, tata letak, dan elemen grafis yang dipakai.</li>
+<li>Buat pedoman desain sederhana agar semua anggota mengikuti gaya visual yang sama.</li></ol>
+<div class="note tip"><b>Tips:</b> jangan terlalu sering mengganti warna dan gaya desain. Konsistensi visual membantu audiens mengenali media sosial DPM.</div></div></details>
+
+<details><summary>2. Membuat matriks atau content planner</summary><div class="b">
+<p>Content planner mengatur jenis informasi, waktu publikasi, dan progres pengerjaan konten.</p>
+<ol class="steps">
+<li>Buka Google Sheets atau Microsoft Excel.</li>
+<li>Buat tabel berisi daftar konten yang akan dipublikasikan.</li>
+<li>Kelompokkan konten menurut jenis: terjadwal, periodik, insidental.</li>
+<li>Tentukan tanggal publikasi setiap konten.</li>
+<li>Tambahkan kolom penanggung jawab dan status pengerjaan.</li>
+<li>Perbarui matriks secara berkala bila ada informasi atau agenda baru.</li></ol>
+<p><b>Contoh format matriks</b> (klik status untuk mengubahnya):</p>
+<div class="tw"><table><thead><tr><th>No.</th><th>Konten</th><th>Jenis</th><th>Jadwal</th><th>Status</th></tr></thead><tbody id="mx"></tbody></table></div>
+<div class="note tip"><b>Tips:</b> susun konten terjadwal sejak awal periode agar desain dan publikasi lebih teratur. Konten insidental ditambahkan kapan saja sesuai kebutuhan.</div></div></details>
+
+<details><summary>3. Mendesain konten media sosial</summary><div class="b">
+<p>Desain bisa dibuat dengan Canva atau Figma. <b>Canva lebih direkomendasikan</b> karena mudah dipakai, punya banyak template, dan mendukung kolaborasi sehingga gaya desain antaranggota lebih mudah disamakan. Figma cocok untuk desain yang butuh pengaturan elemen dan komponen yang lebih fleksibel.</p>
+<ol class="steps">
+<li>Periksa matriks konten untuk tahu informasi yang harus dipublikasikan.</li>
+<li>Siapkan materi, teks, foto, dan informasi pendukung.</li>
+<li>Gunakan template atau pedoman desain DPM yang sudah disepakati.</li>
+<li>Sesuaikan desain dengan jenis dan tujuan publikasi.</li>
+<li>Cek ulang isi informasi, ejaan, tata letak, dan identitas visual.</li>
+<li>Ajukan desain untuk diperiksa sebelum dipublikasikan.</li></ol></div></details>
+</section>
+
+<section id="relasi">
+<h2>4. Memperluas Relasi dan Insight DPM</h2>
+<p>Badan Eksternal memperluas hubungan kelembagaan dan mencari wawasan baru lewat interaksi dengan organisasi mahasiswa lain, untuk membangun hubungan baik, bertukar informasi, dan mempelajari sistem kerja organisasi dari berbagai kampus.</p>
+<h3>A. Studi banding</h3>
+<p>Studi banding adalah pertukaran informasi dan pengalaman antarlembaga tentang sistem kerja, program, kebijakan, dan pengelolaan organisasi.</p>
+<div class="note"><b>Target:</b> minimal satu kali dalam satu periode kepengurusan.</div>
+<h3 style="margin-top:32px">B. Cara melaksanakan studi banding</h3>
+<ol class="steps" id="sb"></ol>
+<p><b>Kata kunci pencarian:</b></p>
+<ul class="chips"><li>DPM Universitas ...</li><li>Senat Mahasiswa Universitas ...</li><li>Student Legislative Council ...</li><li>Dewan Perwakilan Mahasiswa ...</li></ul>
+<h3 style="margin-top:36px">C. Contoh template chat studi banding</h3>
+<p>Gunakan template ini untuk DM Instagram atau WhatsApp. Ganti bagian dalam kurung siku.</p>
+<div class="chat"><button class="cp" id="cp">Salin</button><span id="tpl">Halo, selamat pagi/siang/sore!
+
+Perkenalkan, kami dari Badan Eksternal Dewan Perwakilan Mahasiswa Sekolah Vokasi IPB.
+
+Saat ini, kami sedang merencanakan kegiatan studi banding sebagai sarana bertukar informasi, pengalaman, serta wawasan terkait sistem kerja dan pengelolaan organisasi legislatif mahasiswa.
+
+Sehubungan dengan hal tersebut, kami bermaksud menjalin komunikasi dan mengajukan kerja sama kegiatan studi banding dengan DPM [Nama Universitas].
+
+Apakah kami dapat meminta informasi terkait narahubung atau pihak yang dapat kami hubungi lebih lanjut untuk membahas rencana kegiatan tersebut?
+
+Terima kasih atas waktu dan perhatiannya. Kami berharap dapat menjalin hubungan baik dan berkolaborasi dengan DPM [Nama Universitas].
+
+Salam,
+Badan Eksternal
+DPM SV IPB</span></div>
+</section>
+
+<section id="checklist">
+<h2>5. Checklist Kerja Badan Eksternal</h2>
+<p>Pakai checklist ini sebagai pengingat tugas dan target selama satu periode kepengurusan. Centangan tersimpan di browser kamu.</p>
+<div class="prog"><div class="ring" id="ring"><span id="pct">0%</span></div><div><b id="cnt">0 dari 16 tugas selesai</b><br><button class="ghost" id="rs" style="margin-top:8px">Reset checklist</button></div></div>
+<div id="cl"></div>
+</section>
+</main>
+
+<footer>
+    <div class="wrap"><h2>Penutup</h2>
+<p>Badan Eksternal bukan hanya bertanggung jawab atas tampilan media sosial DPM, tetapi juga menjadi representasi identitas dan hubungan kelembagaan DPM SV IPB. Konsistensi dalam membangun branding, menjaga komunikasi, dan memperluas relasi penting untuk mendukung citra dan eksistensi DPM.</p>
+<p>Setiap anggota diharapkan menjalankan tugas secara terkoordinasi, komunikatif, dan bertanggung jawab agar seluruh program kerja Badan Eksternal terlaksana dengan baik.</p>
+<P>SEMANGAAT YAH BADEKS DPM SMI. LAFYUUU😉💚</P>
+</div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+/* tema */
+const root=document.documentElement;
+$('#th').onclick=()=>{const d=root.dataset.theme==='dark'||(!root.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);root.dataset.theme=d?'light':'dark'};
+
+/* progress + scrollspy (sudah diperbaiki agar scroll mulus) */
+const secs=[...document.querySelectorAll('main section')],
+      lk=[...document.querySelectorAll('#links a')],
+      linksBox=$('#links');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  $('#bar').style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%';
+  let cur=secs[0].id;
+  secs.forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.4)cur=s.id});
+  lk.forEach(a=>{
+    const on=a.getAttribute('href')==='#'+cur;
+    a.classList.toggle('on',on);
+    if(on){
+      const targetLeft=a.offsetLeft-(linksBox.clientWidth/2)+(a.clientWidth/2);
+      linksBox.scrollTo({left:targetLeft,behavior:'smooth'});
+    }
+  });
+},{passive:true});
+
+/* feed palette (Matcha & Strawberry Series) */
+const pal=[
+  ['#A8C9A0','#F7C6CF','#FFF6EE','#D56B7A'], /* Matcha & Strawberry Mix */
+  ['#A8C9A0','#6E7F5E','#E2DED6','#FFF6EE'], /* Matcha Whisper Focus */
+  ['#F7C6CF','#D56B7A','#FFF6EE','#E2DED6'], /* Strawberry Milk Focus */
+  ['#FFF6EE','#E2DED6','#A8C9A0','#F7C6CF']  /* Soft Cream & Clay */
+];
+const lab=['DPM','Info','SK','Reveal','Hari Besar','Studi Banding','STT','SU','Apresiasi'];
+const feed=$('#feed');lab.forEach(()=>feed.appendChild(document.createElement('div')));
+function paint(i){
+  const p=pal[i];
+  const txtDark='#2A3323';
+  const txtLight='#FFF6EE';
+  [...feed.children].forEach((d,k)=>{
+    const bg=p[[0,1,2,3,0,2,1,3,2][k]];
+    d.style.background=bg;
+    d.style.color=(bg==='#D56B7A'||bg==='#6E7F5E')?txtLight:txtDark;
+    d.textContent=lab[k];
+  });
+  document.querySelectorAll('.sw button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p==i));
+}
+document.querySelectorAll('.sw button').forEach(b=>b.onclick=()=>paint(+b.dataset.p));paint(0);
+
+/* tabs jenis konten */
+const T=[
+  ['Terjadwal','Terencana','Konten yang dipublikasikan rutin berdasarkan kalender atau agenda yang sudah ditentukan.',['Press release','Informasi kemahasiswaan','Peraturan Vokasi','Hari besar keagamaan','Hari peringatan nasional maupun internasional']],
+  ['Periodik','Berkala','Konten yang dipublikasikan pada periode tertentu sesuai agenda dan kebutuhan kelembagaan.',['Reveal anggota dewan','Penilaian ORMAWA (STT dan SU)']],
+  ['Insidental','Situasional','Konten yang dipublikasikan sewaktu-waktu berdasarkan kondisi atau kebutuhan mendesak.',['Surat keputusan (SK)','Surat pemanggilan ORMAWA','Informasi mendesak','Ucapan selamat atau apresiasi','Ucapan belasungkawa atau kabar duka']]
+];
+const tb=$('#tabs');
+function tab(i){[...tb.children].forEach((b,k)=>b.setAttribute('aria-selected',k===i));const t=T[i];
+$('#tabp').innerHTML=`<span class="tag">${t[1]}</span><h3>Postingan ${t[0]}</h3><p>${t[2]}</p><ul class="chips">${t[3].map(x=>`<li>${x}</li>`).join('')}</ul>`}
+T.forEach((t,i)=>{const b=document.createElement('button');b.role='tab';b.textContent=t[0];b.onclick=()=>tab(i);tb.appendChild(b)});tab(0);
+
+/* matriks */
+const M=[['Hari Pahlawan','Terjadwal','10 Nov',2],['Reveal Dewan','Periodik','Sesuai agenda',1],['Surat Keputusan','Insidental','Sewaktu-waktu',0]];
+const SN=['Menunggu','Proses','Selesai'];
+function mx(){$('#mx').innerHTML=M.map((r,i)=>`<tr><td>${i+1}</td><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td><button class="st s${r[3]}" data-i="${i}">${SN[r[3]]}</button></td></tr>`).join('');
+document.querySelectorAll('.st').forEach(b=>b.onclick=()=>{M[b.dataset.i][3]=(M[b.dataset.i][3]+1)%3;mx()})}mx();
+
+/* studi banding */
+const SB=[
+  ['Aktifkan akun Instagram DPM','Pastikan akun resmi DPM aktif dan beridentitas jelas. Akun ini menjadi media komunikasi dan representasi kelembagaan saat menghubungi kampus lain.'],
+  ['Cari organisasi kampus tujuan','Cari akun Instagram DPM, BEM, atau lembaga legislatif mahasiswa dari berbagai perguruan tinggi, memakai kata kunci di bawah.'],
+  ['Bangun relasi lewat Instagram','Ikuti akun mereka, lakukan follow back, dan beri apresiasi pada kegiatan mereka. Jaga interaksi tetap wajar.'],
+  ['Hubungi organisasi tujuan','Hubungi lewat narahubung yang tertera di akun atau kirim DM. Sampaikan maksud dan tujuan dengan bahasa sopan dan profesional.'],
+  ['Lakukan follow up','Jika belum ada respons, follow up dengan sopan dalam rentang waktu wajar. Jika tetap tidak ada respons, cari kampus alternatif.'],
+  ['Laksanakan dan dokumentasikan','Setelah sepakat, koordinasikan teknis, waktu, tempat, dan materi diskusi. Dokumentasikan hasilnya untuk evaluasi dan referensi pengembangan DPM SV IPB.']
+];
+$('#sb').innerHTML=SB.map(s=>`<li><b>${s[0]}</b><br><span style="color:var(--mut)">${s[1]}</span></li>`).join('');
+
+/* salin */
+$('#cp').onclick=async e=>{const t=$('#tpl').innerText;try{await navigator.clipboard.writeText(t);e.target.textContent='Tersalin'}catch(_){const r=document.createRange();r.selectNodeContents($('#tpl'));getSelection().removeAllRanges();getSelection().addRange(r);e.target.textContent='Teks terpilih, tekan salin'}setTimeout(()=>e.target.textContent='Salin',2000)};
+
+/* checklist */
+const C=[
+  ['Identitas DPM',['Membuat atau memperbarui logo DPM','Menyusun desain PDH','Menyusun desain lanyard','Menyusun desain ID Card','Menyusun desain badge almamater']],
+  ['Branding DPM',['Menentukan color palette dan pedoman desain','Menyusun template feeds media sosial','Membuat matriks atau content planner','Mengelola publikasi konten terjadwal','Mengelola publikasi konten periodik dan insidental','Memeriksa konten sebelum dipublikasikan']],
+  ['Relasi dan Insight',['Mengaktifkan dan mengelola akun Instagram DPM','Mencari organisasi legislatif kampus lain','Membangun komunikasi dengan kampus tujuan','Melaksanakan minimal satu kali studi banding','Mendokumentasikan hasil studi banding']]
+];
+const KEY='dpm-be-checklist';let st={};try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){}
+let n=0;$('#cl').innerHTML=C.map(g=>`<div class="grp">${g[0]}</div>`+g[1].map(t=>{const id='c'+(n++);return `<label class="ck"><input type="checkbox" id="${id}"><span>${t}</span></label>`}).join('')).join('');
+const boxes=[...document.querySelectorAll('.ck input')];
+function upd(){const d=boxes.filter(b=>b.checked).length,p=Math.round(d/boxes.length*100);$('#ring').style.setProperty('--p',p);$('#pct').textContent=p+'%';$('#cnt').textContent=`${d} dari ${boxes.length} tugas selesai`;
+const o={};boxes.forEach(b=>{if(b.checked)o[b.id]=1});try{localStorage.setItem(KEY,JSON.stringify(o))}catch(_){}}
+boxes.forEach(b=>{b.checked=!!st[b.id];b.onchange=upd});upd();
+$('#rs').onclick=()=>{boxes.forEach(b=>b.checked=false);upd()};
+</script>
+</body>
+</html>
